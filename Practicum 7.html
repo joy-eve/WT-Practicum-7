@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SupplySphere Gallery</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            background: #eef2f3;
+            color: #183b4e;
+        }
+
+        header, footer {
+            background: #183b4e;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+        }
+
+        .item {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 10px 0;
+            text-align: center;
+            color: white;
+            background: #183b4ecc;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: #000d;
+            z-index: 10;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox:target {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 85%;
+            max-height: 80vh;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 35px;
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 23px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>SupplySphere</h1>
+        <p>Supply Chain and Logistics Gallery</p>
+    </header>
+
+    <div class="container">
+        <h2>Our Logistics Operations</h2>
+
+        <div class="gallery">
+
+            <div class="item">
+                <a href="#image1">
+                    <img src="warehouse.jpg"
+                         alt="Warehouse" loading="lazy">
+                </a>
+                <div class="overlay">Warehousing</div>
+            </div>
+
+            <div class="item">
+                <a href="#image2">
+                    <img src="truck.jpg"
+                         alt="Transport truck" loading="lazy">
+                </a>
+                <div class="overlay">Transportation</div>
+            </div>
+
+            <div class="item">
+                <a href="#image3">
+                    <img src="container.jpg"
+                         alt="Shipping containers" loading="lazy">
+                </a>
+                <div class="overlay">Cargo Shipping</div>
+            </div>
+
+            <div class="item">
+                <a href="#image4">
+                    <img src="delivery.jpg"
+                         alt="Delivery packages" loading="lazy">
+                </a>
+                <div class="overlay">Delivery</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="lightbox" id="image1">
+        <a href="#" class="close">&times;</a>
+        <img src="warehouse.jpg" alt="Warehouse">
+    </div>
+
+    <div class="lightbox" id="image2">
+        <a href="#" class="close">&times;</a>
+        <img src="truck.jpg" alt="Transport truck">
+    </div>
+
+    <div class="lightbox" id="image3">
+        <a href="#" class="close">&times;</a>
+        <img src="container.jpg" alt="Shipping containers">
+    </div>
+
+    <div class="lightbox" id="image4">
+        <a href="#" class="close">&times;</a>
+        <img src="delivery.jpg" alt="Delivery packages">
+    </div>
+
+    <footer>
+        <p>© 2026 SupplySphere | Logistics Management</p>
+    </footer>
+
+</body>
+</html>
